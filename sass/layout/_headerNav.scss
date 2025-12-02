@@ -1,6 +1,9 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+/* ===========================
+   HEADER
+   =========================== */
 header {
   position: sticky; // reste fixé
   top: 0; // collé en haut
@@ -22,6 +25,7 @@ header {
 
     @include respond-desktop {
       max-width: 120px;
+      margin: 0; // plus besoin de centrer
     }
   }
 
@@ -37,6 +41,7 @@ header {
 
     @include respond-desktop {
       font-size: 2rem;
+      text-align: left;
     }
   }
 
@@ -45,6 +50,10 @@ header {
     color: $color-secondary;
     font-size: 1rem;
     margin-top: 5px;
+
+    @include respond-desktop {
+      text-align: left;
+    }
   }
 
   p {
@@ -53,21 +62,34 @@ header {
     @include respond-tablet {
       font-size: 1.1rem;
     }
+
+    @include respond-desktop {
+      text-align: left;
+    }
+  }
+
+  /* Layout desktop : logo à gauche, textes à droite */
+  @include respond-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 
-/* Navigation mobile first */
-
+/* ===========================
+   NAVIGATION
+   =========================== */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: block;
+  display: block; // mobile : vertical
 
   @include respond-tablet {
     display: flex; // horizontal
-    justify-content: center; // centré
-    gap: 30px; // espace entre les liens
+    justify-content: center;
+    gap: 30px;
   }
 }
 
@@ -75,17 +97,53 @@ nav li {
   margin: 8px 0;
 
   @include respond-tablet {
-    margin: 0; // desktop
+    margin: 0; // plus besoin sur desktop
   }
 }
 
 nav a {
+  position: relative;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+
+  // Barre de soulignement (cachée par défaut)
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: $color-highlight;
+    transition: width 0.3s ease;
+  }
+
+  // Effet au survol
+  &:hover {
+    color: $color-highlight;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  // État actif (page courante)
+  &.active {
+    color: $color-highlight;
+
+    &::after {
+      width: 100%;
+    }
+  }
 }
 
-nav a:hover {
-  color: #d4af37;
+/* ===========================
+   BARRE VIOLETTE
+   =========================== */
+.nav-bar {
+  height: 2px;
+  background-color: $color-primary;
+  width: 100%;
 }

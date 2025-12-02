@@ -135,6 +135,9 @@ button.cta:hover {
   color: #1c1c1c;
 }
 
+/* ===========================
+   HEADER
+   =========================== */
 header {
   position: sticky;
   top: 0;
@@ -143,6 +146,7 @@ header {
   padding: 20px;
   text-align: center;
   border-bottom: 2px solid #d4af37;
+  /* Layout desktop : logo à gauche, textes à droite */
 }
 header .logo {
   display: block;
@@ -158,6 +162,7 @@ header .logo {
 @media (min-width: 1024px) {
   header .logo {
     max-width: 120px;
+    margin: 0;
   }
 }
 header h1 {
@@ -174,6 +179,7 @@ header h1 {
 @media (min-width: 1024px) {
   header h1 {
     font-size: 2rem;
+    text-align: left;
   }
 }
 header h2 {
@@ -181,6 +187,11 @@ header h2 {
   color: #3f8fbf;
   font-size: 1rem;
   margin-top: 5px;
+}
+@media (min-width: 1024px) {
+  header h2 {
+    text-align: left;
+  }
 }
 header p {
   font-size: 0.9rem;
@@ -190,8 +201,23 @@ header p {
     font-size: 1.1rem;
   }
 }
+@media (min-width: 1024px) {
+  header p {
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
 
-/* Navigation mobile first */
+/* ===========================
+   NAVIGATION
+   =========================== */
 nav ul {
   list-style: none;
   margin: 0;
@@ -216,14 +242,42 @@ nav li {
 }
 
 nav a {
+  position: relative;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
-
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
 nav a:hover {
   color: #d4af37;
+}
+nav a:hover::after {
+  width: 100%;
+}
+nav a.active {
+  color: #d4af37;
+}
+nav a.active::after {
+  width: 100%;
+}
+
+/* ===========================
+   BARRE VIOLETTE
+   =========================== */
+.nav-bar {
+  height: 2px;
+  background-color: #7f3fbf;
+  width: 100%;
 }
 
 .container, .container--reverse {
@@ -272,6 +326,87 @@ nav a:hover {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   object-fit: cover;
+}
+
+/* ===========================
+   PRESENTATION
+   =========================== */
+.presentation {
+  padding: 40px;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .presentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .presentation .presentation__text {
+    flex: 1;
+    padding-right: 40px;
+  }
+  .presentation .presentation__text h2 {
+    text-align: left;
+  }
+  .presentation .presentation__image {
+    flex: 1;
+  }
+  .presentation .presentation__image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* ===========================
+   TITRE
+   =========================== */
+.presentation__text h2 {
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .presentation__text h2 {
+    text-align: left;
+  }
+}
+
+/* ===========================
+   VALEURS
+   =========================== */
+.values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+.values li {
+  flex: 1 1 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #d4af37;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+@media (min-width: 1024px) {
+  .values li {
+    flex: 0 0 auto;
+  }
+}
+
+/* ===========================
+   SIGNATURE
+   =========================== */
+.signature {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #7f3fbf;
+  font-weight: 600;
 }
 
 .button {

@@ -1,0 +1,91 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+header {
+  position: sticky; // reste fixé
+  top: 0; // collé en haut
+  z-index: 1000; // au-dessus du contenu
+  background: $color-background;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid $color-highlight;
+
+  .logo {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 120px;
+    height: auto;
+
+    @include respond-tablet {
+      max-width: 100px;
+    }
+
+    @include respond-desktop {
+      max-width: 120px;
+    }
+  }
+
+  h1 {
+    font-family: $font-title;
+    color: $color-primary;
+    font-size: 1.6rem;
+    margin: 0;
+
+    @include respond-tablet {
+      font-size: 1.8rem;
+    }
+
+    @include respond-desktop {
+      font-size: 2rem;
+    }
+  }
+
+  h2 {
+    font-family: $font-subtitle;
+    color: $color-secondary;
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  p {
+    font-size: 0.9rem;
+
+    @include respond-tablet {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/* Navigation mobile first */
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  @include respond-tablet {
+    display: flex; // horizontal
+    justify-content: center; // centré
+    gap: 30px; // espace entre les liens
+  }
+}
+
+nav li {
+  margin: 8px 0;
+
+  @include respond-tablet {
+    margin: 0; // desktop
+  }
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d4af37;
+}

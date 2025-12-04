@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.button {
+  display: inline-block;
+  padding: $spacing-small $spacing-medium;
+  font-family: $font-accent;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  // Style par défaut (violet premium)
+  background: $color-primary;
+  color: $color-highlight;
+  border: 2px solid $color-primary;
+
+  &:hover {
+    background: transparent;
+    color: $color-primary;
+  }
+
+  // Variante dorée
+  &--secondary {
+    background: $color-secondary;
+    color: $color-background;
+    border: 2px solid $color-secondary;
+
+    &:hover {
+      background: transparent;
+      color: $color-secondary;
+    }
+  }
+
+  // Responsive : boutons plus grands sur desktop
+  @include respond-desktop {
+    padding: $spacing-medium $spacing-large;
+    font-size: 1.1rem;
+  }
+}

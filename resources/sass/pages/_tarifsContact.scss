@@ -1,0 +1,152 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+.pricing-contact {
+  padding: 3rem 1rem;
+  background: $color-background;
+  color: $color-text;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $color-highlight;
+  }
+
+  // Tarifs
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .card {
+      @include lighten-color(background, $color-background, 5%);
+      @include darken-color(border-color, $color-highlight, 5%);
+      @include saturate-color(color, $color-primary, 10%);
+      border: 2px solid $color-highlight;
+      border-radius: 10px;
+      padding: 2rem;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        color: $color-primary;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $color-secondary;
+        margin-bottom: 1rem;
+      }
+
+      .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-highlight;
+      }
+    }
+  }
+
+  // Contact
+  .contact-form {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+
+      input,
+      textarea {
+        padding: 0.8rem;
+        border: 2px solid $color-secondary;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      button {
+        background: $color-primary;
+        color: $color-background;
+        border: none;
+        padding: 1rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $color-highlight;
+          color: $color-background;
+        }
+      }
+    }
+    .map {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+
+      iframe {
+        border: 3px solid $color-highlight;
+        border-radius: 10px;
+        max-width: 100%;
+      }
+    }
+  }
+  .contact-card {
+    background: lighten($color-background, 5%); // ou color.adjust
+    border: 2px solid $color-highlight;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      color: $color-primary;
+      margin-bottom: 1rem;
+    }
+
+    address {
+      font-style: normal;
+      color: $color-secondary;
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      a {
+        color: $color-highlight;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // ✅ Desktop
+  @include respond-desktop {
+    .pricing {
+      flex-direction: row;
+      justify-content: center;
+
+      .card {
+        flex: 1;
+        max-width: 300px;
+      }
+    }
+  }
+}

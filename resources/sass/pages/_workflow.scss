@@ -1,0 +1,122 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.workflow {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: $color-background;
+  color: $color-text;
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: $color-highlight; // doré élégant
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column; // ✅ mobile par défaut
+    gap: 2rem;
+    position: relative;
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .dot {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        background: $color-background;
+        border: 3px solid $color-highlight;
+        border-radius: 50%;
+        padding: 0.5rem;
+        transition: background 0.3s, transform 0.3s;
+        animation: glow 2s ease-in-out infinite;
+
+        &:hover {
+          background: $color-highlight;
+          color: $color-background;
+          transform: scale(1.2);
+        }
+      }
+
+      h3 {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+        color: $color-primary; // violet pour les titres
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: $color-secondary; // bleu pour le texte descriptif
+        max-width: 250px;
+      }
+    }
+    // ✨ décalage progressif des dots
+    .step:nth-child(1) .dot {
+      animation-delay: 0s;
+    }
+    .step:nth-child(2) .dot {
+      animation-delay: 0.5s;
+    }
+    .step:nth-child(3) .dot {
+      animation-delay: 1s;
+    }
+    .step:nth-child(4) .dot {
+      animation-delay: 1.5s;
+    }
+  }
+
+  // ✅ Desktop
+  @include respond-desktop {
+    .timeline {
+      flex-direction: row;
+      justify-content: center; // centre les étapes
+      align-items: flex-start;
+      max-width: 1000px; // largeur max
+      margin: 0 auto; // centrage horizontal
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 35px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $color-highlight; // ligne dorée
+        animation: drawLine 2s ease forwards;
+      }
+    }
+
+    .step {
+      flex: 1;
+      max-width: 200px;
+
+      .dot {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// ✨ Animation glow
+@keyframes glow {
+  0% {
+    background: $color-background;
+    color: $color-highlight;
+    transform: scale(1);
+  }
+  50% {
+    background: $color-highlight;
+    color: $color-background;
+    transform: scale(1.2);
+  }
+  100% {
+    background: $color-background;
+    color: $color-highlight;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,38 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+// abstracts/_placeholders.scss
+%card-style {
+  background: rgb(40.75, 40.75, 40.75);
+  border: 2px solid #d4af37;
+  border-color: rgb(198.765, 161.994, 42.735);
+  color: rgb(127, 50.3, 203.7);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: $shadow-default;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    border-color: lighten(#d4af37, 10%);
+  }
+}
+
+%card-glass {
+  background: rgba(255, 255, 255, 0.1); // semi-transparent
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px); // effet glass
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}

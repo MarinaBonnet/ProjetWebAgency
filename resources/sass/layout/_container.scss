@@ -1,0 +1,61 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+@use "../abstracts/placeholders" as *;
+
+.container {
+  @extend %card-style;
+  display: flex;
+  flex-direction: column; // mobile : empilé
+  gap: $spacing-medium;
+  padding: $spacing-medium;
+  max-width: 1200px;
+  margin: $spacing-large auto;
+
+  @include respond-desktop {
+    flex-direction: row; // desktop : côte à côte
+    align-items: center;
+    gap: $spacing-large;
+  }
+}
+
+// Variante inversée
+.container--reverse {
+  @extend .container;
+
+  @include respond-desktop {
+    flex-direction: row-reverse; // texte à gauche, image à droite
+  }
+}
+
+// Bloc texte
+.container__text {
+  flex: 1;
+  background: $color-background;
+
+  padding: $spacing-medium;
+  border-radius: $radius-medium;
+  box-shadow: $shadow-default;
+
+  ul {
+    list-style: disc;
+    padding-left: $spacing-medium;
+    line-height: 1.6;
+
+    li {
+      color: $color-text; // texte neutre pour les listes
+    }
+  }
+}
+
+// Bloc image
+.container__image {
+  flex: 1;
+
+  img {
+    width: 100%;
+    border-radius: $radius-medium;
+    box-shadow: $shadow-default;
+    object-fit: cover;
+  }
+}

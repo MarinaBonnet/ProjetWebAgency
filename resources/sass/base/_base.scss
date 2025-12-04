@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography";
+
+body {
+  background: $color-background;
+  color: $color-text;
+  font-family: $font-paragraph;
+  margin: 0;
+  padding: 0 10px;
+  line-height: 1.6;
+
+  @include respond-tablet {
+    padding: 0 20px;
+  }
+  @include respond-desktop {
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  font-family: $font-title;
+  font-size: 3rem;
+  background: linear-gradient(90deg, $color-highlight 0%, $color-primary 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  // effet brillant "vague"
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+h2 {
+  font-family: $font-title;
+  font-size: 2rem;
+  color: $color-highlight;
+}
+
+h3 {
+  font-family: $font-title;
+  color: $color-primary;
+  font-size: 1.5rem;
+}
+
+h4,
+h5 {
+  font-family: $font-subtitle;
+  color: $color-secondary;
+}
+
+button.cta {
+  background: $color-primary;
+  color: $color-text;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-highlight;
+    color: $color-background;
+  }
+}

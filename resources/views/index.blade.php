@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/main.css">
+  @vite(['resources/sass/main.scss', 'resources/js/main.js'])
+
   <title>Code&Craft - Agence Web hybride </title>
 </head>
 
 <body>
   <!-- header  -->
   <header>
-    <img class="logo" src="assets/logo/logo3d.png" alt="Logo Code&Craft">
+    <img src="{{ Vite::asset('resources/public/assets/logo/logo3d.png') }}" alt="Logo" class="logo">
+
     <h1>Code&Craft</h1>
     <p>Des solutions web pour tout les métiers </p>
   </header>

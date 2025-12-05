@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Empêche l’indexation des dossiers techniques de Laravel
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Indique à Google et aux autres moteurs où trouver ton sitemap
+Sitemap: https://ton-domaine.com/sitemap.xml

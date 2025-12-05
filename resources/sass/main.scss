@@ -16,7 +16,8 @@
 
 // Components
 @use "components/buttons";
-//@use "components/cards";
+@use "components/cards";
+@use "components/cookies";
 //@use "components/forms";
 
 // Pages
@@ -24,7 +25,7 @@
 @use "pages/creation";
 @use "pages/workflow";
 @use "pages/tarifsContact";
-//@use "pages/about";
+@use "pages/mentions";
 
 // Themes
 //@use "themes/dark";

@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Marina
+Agency: Code&Craft
+Location: Hourtin, France
+Contact: contact@ton-domaine.com
+
+/* SITE */
+Last update: 2025-12-05
+Standards: HTML5, CSS3, Laravel, Sass
+Components: Responsive design, SEO optimisé

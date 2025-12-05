@@ -4,6 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO -->
+<meta name="description" content="Code&Craft - Agence web hybride à Hourtin : sites vitrines, e-commerce, applications web et SEO premium.">
+<meta name="keywords" content="agence web Hourtin, site vitrine, e-commerce, application web, SEO, Code&Craft">
+<meta name="author" content="Code&Craft SAS">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Code&Craft - Agence Web hybride">
+<meta property="og:description" content="Créativité et expertise technique : sites vitrines, e-commerce, applications web et SEO premium.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ton-domaine.com">
+<meta property="og:image" content="https://ton-domaine.com/assets/logo/logo3d.png">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Code&Craft - Agence Web hybride">
+<meta name="twitter:description" content="Sites vitrines, e-commerce, applications web et SEO premium.">
+<meta name="twitter:image" content="https://ton-domaine.com/assets/logo/logo3d.png">
+
+<link rel="canonical" href="https://ton-domaine.com/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
   <link rel="stylesheet" href="assets/css/main.css">
   @vite(['resources/sass/main.scss', 'resources/js/main.js'])
 
@@ -13,13 +36,14 @@
 <body>
   <!-- header  -->
   <header>
-    <img src="{{ Vite::asset('resources/public/assets/logo/logo3d.png') }}" alt="Logo" class="logo">
+    <img src="{{ asset('assets/logo/logo3d.png') }}" alt="Logo 3D">
+
 
     <h1>Code&Craft</h1>
     <p>Des solutions web pour tout les métiers </p>
   </header>
   <!-- Navigation -->
-  <nav>
+  <nav aria-label="Navigation principale">
     <ul>
       <li><a href="#services">Nos services </a></li>
       <li><a href="#création">Nos créations </a></li>
@@ -192,7 +216,7 @@
         <p>Tel: <a href="tel:+33785612428">+33 7 85 61 24 28</a></p>
       </div>
 
-      <nav class="footer-nav">
+      <nav class="footer-nav" aria-label="Navigation du pied de page">
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -204,9 +228,9 @@
 
       <div class="footer-legal">
         <ul>
-          <li><a href="/mentions-legales">Mentions légales</a></li>
-          <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
-          <li><a href="/cookies">Gestion des cookies</a></li>
+          <li><a href="{{route('mentions')}}">Mentions légales</a></li>
+          <li><a href="{{route('privacy')}}">Politique de confidentialité</a></li>
+          <li><a href="{{route('cookies')}}">Gestion des cookies</a></li>
         </ul>
       </div>
     </div>
@@ -215,7 +239,16 @@
       <p class="tdr">© 2025 Code&Craft — Tous droits réservés 💜</p>
     </div>
   </footer>
-  <script type="module" src="js/main.js"></script>
+  <div id="cookie-banner" class="cookie-banner">
+  <p>
+    Ce site utilise des cookies pour améliorer votre expérience.
+    <a href="{{route('cookies')}}">En savoir plus</a>
+  </p>
+  <button id="accept-cookies">Accepter</button>
+  <button id="reject-cookies">Refuser</button>
+</div>
+
+  
 </body>
 
 </html>

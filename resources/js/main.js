@@ -1,20 +1,14 @@
 // main.js
+
+// On importe les classes depuis carousel.js
 import { ImageCarousel, TrackCarousel } from "./carousel.js";
+
+// On importe la bannière cookies
 import { CookieBanner } from "./cookies.js";
 
+// On initialise uniquement ce qui n'est PAS un carousel d'images
 document.addEventListener("DOMContentLoaded", () => {
-    new ImageCarousel(
-        ".container__image--artisan",
-        ["images/artisan1.jpg", "images/artisan2.jpg", "images/artisan3.jpg"],
-        4000
-    );
-
-    new ImageCarousel(
-        ".container__image--digital",
-        ["images/digital1.jpg", "images/digital2.jpg", "images/digital3.jpg"],
-        4000
-    );
-
+    // TrackCarousel
     new TrackCarousel(
         ".carousel-track",
         ".carousel-item",
@@ -22,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".carousel-arrow--next"
     );
 
+    // CookieBanner
     new CookieBanner({
         analyticsId: "G-XXXXXXXXXX",
         text: "Ce site utilise des cookies pour améliorer votre expérience.",

@@ -27,8 +27,8 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 
-  <link rel="stylesheet" href="assets/css/main.css">
-  @vite(['resources/sass/main.scss', 'resources/js/main.js'])
+  <!--<link rel="stylesheet" href="assets/css/main.css">-->
+ 
 
   <title>Code&Craft - Agence Web hybride </title>
 </head>
@@ -36,7 +36,7 @@
 <body>
   <!-- header  -->
   <header>
-    <img src="{{ asset('assets/logo/logo3d.png') }}" alt="Logo 3D">
+    <img class="logo" src="/assets/logo/logo3d.png" alt="Logo 3D">
 
 
     <h1>Code&Craft</h1>
@@ -91,8 +91,8 @@
             <li>Maintenance simplifiée</li>
           </ul>
         </div>
-        <div class="container__image container__image--artisan">
-          <img src="" alt="Illustration artisan">
+        <div id="carousel-artisan" class="container__image container__image--artisan">
+            <img src="" alt="Illustration artisan">
         </div>
       </div>
       <div class="container container--reverse">
@@ -108,7 +108,7 @@
             <li>Maintenance évolutive & accompagnement continu</li>
           </ul>
         </div>
-        <div class="container__image container__image--digital">
+        <div id="carousel-startup" class="container__image container__image--digital">
           <img src="" alt="Illustration startup">
         </div>
       </div>
@@ -122,19 +122,19 @@
           <h3>Site vitrine</h3>
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150" alt="Application web">
+          <img src="https://via.placehold.co/150" alt="Application web">
           <h3>Application web</h3>
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150" alt="Boutique en ligne">
+          <img src="https://via.placehold.co/150" alt="Boutique en ligne">
           <h3>Boutique en ligne</h3>
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150" alt="portfolio">
+          <img src="https://via.placehold.co/150" alt="portfolio">
           <h3>Portfolio</h3>
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150" alt="jeu">
+          <img src="https://via.placehold.co/150" alt="jeu">
           <h3>Jeu</h3>
         </div>
       </div>
@@ -239,16 +239,9 @@
       <p class="tdr">© 2025 Code&Craft — Tous droits réservés 💜</p>
     </div>
   </footer>
-  <div id="cookie-banner" class="cookie-banner">
-  <p>
-    Ce site utilise des cookies pour améliorer votre expérience.
-    <a href="{{route('cookies')}}">En savoir plus</a>
-  </p>
-  <button id="accept-cookies">Accepter</button>
-  <button id="reject-cookies">Refuser</button>
-</div>
-
   
+
+@vite(['resources/sass/main.scss', 'resources/js/main.js'])
 </body>
 
 </html>

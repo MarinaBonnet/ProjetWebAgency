@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <img src="{{ asset('assets/logo/logo3d.png') }}" alt="Logo" class="logo">
+    <img src="{{ Vite::asset('assets/logo/logo3d.png') }}" alt="Logo" class="logo">
 
     <h1>Code&Craft</h1>
     <p>Des solutions web pour tout les métiers</p>

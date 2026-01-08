@@ -1,4 +1,13 @@
 // carousel.js
+import img1 from "@/images/artisan/glass.jpg";
+import img2 from "@/images/artisan/photographer.jpg";
+import img3 from "@/images/artisan/sewing.jpg";
+
+// --- CAROUSEL STARTUP ---
+import start1 from "@/images/startup/ai-generated.png";
+import start2 from "@/images/startup/computer.jpg";
+import start3 from "@/images/startup/teamwork.jpg";
+
 export class ImageCarousel {
     constructor(selector, images, interval = 5000) {
         this.container = document.querySelector(selector);
@@ -60,3 +69,14 @@ export class TrackCarousel {
         });
     }
 }
+const carousel = new ImageCarousel(
+    "#carousel-artisan",
+    [img1, img2, img3],
+    5000
+);
+const startupCarousel = new ImageCarousel(
+    "#carousel-startup",
+    [start1, start2, start3],
+    5000
+);
+console.log("startup 1 :", start1);

@@ -2,32 +2,32 @@
 
 // Éclaircir une couleur
 @mixin lighten-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $lightness: $amount);
+    #{$property}: color.adjust($color, $lightness: $amount);
 }
 
 // Foncé
 @mixin darken-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $lightness: -$amount);
+    #{$property}: color.adjust($color, $lightness: -$amount);
 }
 
 // Saturer
 @mixin saturate-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $saturation: $amount);
+    #{$property}: color.adjust($color, $saturation: $amount);
 }
 
 // Désaturer
 @mixin desaturate-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $saturation: -$amount);
+    #{$property}: color.adjust($color, $saturation: -$amount);
 }
 
 // Transparence
 @mixin transparentize-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $alpha: -$amount);
+    #{$property}: color.adjust($color, $alpha: -$amount);
 }
 
 // Opacifier
 @mixin opacify-color($property, $color, $amount) {
-  #{$property}: color.adjust($color, $alpha: $amount);
+    #{$property}: color.adjust($color, $alpha: $amount);
 }
 
 // ===========================
@@ -36,58 +36,59 @@
 
 // Zoom léger
 @mixin hover-zoom($scale: 1.05) {
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: scale($scale);
-  }
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        transform: scale($scale);
+    }
 }
 
 // Glow doré
-@mixin hover-glow($color: #d4af37) {
-  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  &:hover {
-    box-shadow: 0 0 20px rgba($color, 0.6);
-    border-color: lighten($color, 10%);
-  }
+@mixin hover-glow($color: $color-highlight) {
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 20px rgba($color, 0.6);
+        border-color: color.adjust($color, $lightness: 10%);
+    }
 }
 
 // Slide vers le haut
 @mixin hover-slide-up($distance: -5px) {
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: translateY($distance);
-  }
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        transform: translateY($distance);
+    }
 }
 
 // Fade-in sur hover
 @mixin hover-fade($opacity: 0.8) {
-  transition: opacity 0.3s ease-in-out;
-  &:hover {
-    opacity: $opacity;
-  }
+    transition: opacity 0.3s ease-in-out;
+    &:hover {
+        opacity: $opacity;
+    }
 }
 
 // Breakpoints principaux
 @mixin respond-mobile {
-  @media (max-width: 480px) {
-    @content;
-  }
+    @media (max-width: 480px) {
+        @content;
+    }
 }
 
 @mixin respond-tablet {
-  @media (min-width: 768px) {
-    @content;
-  }
+    @media (min-width: 768px) {
+        @content;
+    }
 }
 
 @mixin respond-desktop {
-  @media (min-width: 1024px) {
-    @content;
-  }
+    @media (min-width: 1024px) {
+        @content;
+    }
 }
 
 @mixin respond-large {
-  @media (min-width: 1440px) {
-    @content;
-  }
+    @media (min-width: 1440px) {
+        @content;
+    }
 }

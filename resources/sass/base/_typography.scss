@@ -1,73 +1,86 @@
-/* Montserrat */
-@font-face {
-    font-family: "Montserrat";
-    src: url("resources/assets/Font/Montserrat/Montserrat-Regular.woff2")
-            format("woff2"),
-        url("resources/assets/Font/Montserrat/Montserrat-Regular.ttf")
-            format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
+/* ===========================
+   MONT SERRAT (VARIABLE FONT)
+   =========================== */
 
 @font-face {
     font-family: "Montserrat";
-    src: url("resources/assets/Font/Montserrat/Montserrat-Bold.woff2")
-            format("woff2"),
-        url("resources/assets/Font/Montserrat/Montserrat-Bold.ttf")
-            format("truetype");
-    font-weight: 700;
+    src: url("../../assets/Font/Montserrat/Montserrat-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
-/* Poppins */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../assets/Font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ===========================
+   POPPINS (FICHIERS CLASSIQUES)
+   =========================== */
+
 @font-face {
     font-family: "Poppins";
-    src: url("resources/assets/Font/Poppins/Poppins-Regular.woff2")
-            format("woff2"),
-        url("resources/assets/Font/Poppins/Poppins-Regular.ttf")
-            format("truetype");
+    src: url("../../assets/Font/Poppins/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url("resources/assets/Font/Poppins/Poppins-SemiBold.woff2")
-            format("woff2"),
-        url("resources/assets/Font/Poppins/Poppins-SemiBold.ttf")
-            format("truetype");
+    src: url("../../assets/Font/Poppins/Poppins-SemiBold.ttf")
+        format("truetype");
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
-/* Open Sans */
-@font-face {
-    font-family: "Open Sans";
-    src: url("resources/assets/Font/OpenSans/OpenSans-Regular.woff2")
-            format("woff2"),
-        url("resources/assets/Font/OpenSans/OpenSans-Regular.ttf")
-            format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
+/* ===========================
+   OPEN SANS (VARIABLE FONT)
+   =========================== */
 
 @font-face {
     font-family: "Open Sans";
-    src: url("resources/assets/Font/OpenSans/OpenSans-SemiBold.woff2")
-            format("woff2"),
-        url("resources/assets/Font/OpenSans/OpenSans-SemiBold.ttf")
-            format("truetype");
-    font-weight: 600;
+    src: url("../../assets/Font/Open_Sans/OpenSans-VariableFont_wdth-wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
-/* Raleway (accent créatif italic) */
+@font-face {
+    font-family: "Open Sans";
+    src: url("../../assets/Font/Open_Sans/OpenSans-Italic-VariableFont_wdth-wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ===========================
+   RALEWAY (VARIABLE FONT)
+   =========================== */
+
 @font-face {
     font-family: "Raleway";
-    src: url("resources/assets/Font/Raleway/Raleway-Italic.woff2")
-            format("woff2"),
-        url("resources/assets/Font/Raleway/Raleway-Italic.ttf")
-            format("truetype");
-    font-weight: 400;
+    src: url("../../assets/Font/Raleway/Raleway-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../../assets/Font/Raleway/Raleway-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
     font-style: italic;
+    font-display: swap;
 }

@@ -4,20 +4,20 @@
 @use "../abstracts/placeholders" as *;
 
 .demo-card {
-  @extend %card-style; // ton style premium de base
+    @extend %card-style; //  style premium de base
 
-  // Animations combinées
-  @include hover-zoom(1.08); // zoom léger
-  @include hover-glow(#d4af37); // glow doré
-  @include hover-slide-up(-8px); // petit décalage vers le haut
+    // Animations combinées
+    @include hover-zoom(1.08); // zoom léger
+    @include hover-glow($color-highlight); // glow doré
+    @include hover-slide-up(-8px); // petit décalage vers le haut
 
-  h3 {
-    color: $color-highlight;
-    margin-bottom: $spacing-small;
-  }
+    h3 {
+        color: $color-highlight;
+        margin-bottom: $spacing-sm;
+    }
 
-  p {
-    color: $color-text;
-    font-size: 1rem;
-  }
+    p {
+        color: $color-text;
+        font-size: 1rem;
+    }
 }

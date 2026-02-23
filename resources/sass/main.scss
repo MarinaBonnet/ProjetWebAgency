@@ -1,7 +1,8 @@
 // Abstracts (variables, mixins, fonctions)
+@use "sass:color";
+
 @use "abstracts/variables" as *;
 @use "abstracts/mixins" as *;
-@use "abstracts/functions" as *;
 @use "abstracts/placeholders" as *;
 
 // Base
@@ -18,6 +19,9 @@
 @use "components/buttons";
 @use "components/cards";
 @use "components/cookies";
+@use "components/back-to-top";
+@use "components/avis";
+
 //@use "components/forms";
 
 // Pages

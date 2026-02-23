@@ -7,27 +7,36 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #222;
-    color: #fff;
-    padding: 1rem;
+    background: color.adjust($color-background, $lightness: 5%);
+    color: $color-text;
+    padding: $spacing-sm;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
 
     button {
-        margin-left: 0.5rem;
-        padding: 0.5rem 1rem;
+        margin-left: $spacing-xs;
+        padding: $spacing-xs $spacing-sm;
         border: none;
+        border-radius: $radius-sm;
         cursor: pointer;
+        font-weight: 600;
     }
 
+    //Bouton accepter (vert) et refuser (rouge)
     #accept-cookies {
-        background: #4caf50;
+        background: color.adjust(#4caf50, $lightness: 0%);
         color: $color-text;
+        &:hover {
+            background: color.adjust(#4caf50, $lightness: 10%);
+        }
     }
     #reject-cookies {
-        background: #f44336;
+        background: color.adjust(#f44336, $lightness: 0%);
         color: $color-text;
+        &:hover {
+            background: color.adjust(#f44336, $lightness: 10%);
+        }
     }
 }

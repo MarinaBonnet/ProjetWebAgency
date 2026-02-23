@@ -1,44 +1,39 @@
 @use "sass:color";
 
 // 🎨 Palette Code&Craft
-// _variables.scss
 $color-primary: #7f3fbf;
 $color-secondary: #3f8fbf;
 $color-highlight: #d4af37;
 $color-background: #1c1c1c;
 $color-text: #ffffff;
 
+// Variantes automatiques
 $color-primary-light: color.adjust($color-primary, $lightness: 10%);
 $color-primary-dark: color.adjust($color-primary, $lightness: -10%);
 $color-secondary-saturated: color.adjust($color-secondary, $saturation: 15%);
 $color-highlight-transparent: color.adjust($color-highlight, $alpha: -0.3);
 
-// Fonts
+// 🅰️ Fonts
 $font-title: "Montserrat", sans-serif;
 $font-subtitle: "Poppins", sans-serif;
 $font-paragraph: "Open Sans", sans-serif;
 $font-accent: "Raleway", italic;
 
-// Spacing
-$spacing-small: 10px;
-$spacing-medium: 20px;
-$spacing-large: 40px;
+// 📏 Échelle d’espacement (mobile-first)
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+$spacing-xxl: 4rem; // 64px
 
-// Ombres
+// 🟦 Ombres
 $shadow-default: 0 2px 6px rgba(0, 0, 0, 0.2);
 $shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
 $shadow-strong: 0 4px 12px rgba(0, 0, 0, 0.3);
 
-// Échelle d’espacement (mobile-first)
-$spacing-xxs: 0.25rem; // 4px
-$spacing-xs: 0.5rem; // 8px
-$spacing-small: 1rem; // 16px
-$spacing-medium: 1.5rem; // 24px
-$spacing-large: 2rem; // 32px
-$spacing-xl: 3rem; // 48px
-$spacing-xxl: 4rem; // 64px
-
-// Radius
-$radius-small: 4px;
-$radius-medium: 8px;
-$radius-large: 16px;
+// 🟪 Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;

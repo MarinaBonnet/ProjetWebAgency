@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "sass:color";
 
 // pages/_mentions.scss
 .mentions-page .privacy-page .cookies-page {
@@ -24,7 +25,7 @@
         display: inline-block;
         margin-top: 2rem;
         padding: 0.5rem 1rem;
-        background: $color-primary; // violet élégant
+        background: $color-primary;
         color: $color-text;
         border-radius: 4px;
         text-decoration: none;

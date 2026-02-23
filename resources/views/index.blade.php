@@ -37,8 +37,6 @@
   <!-- header  -->
   <header>
     <img class="logo" src="/assets/logo/logo3d.png" alt="Logo 3D">
-
-
     <h1>Code&Craft</h1>
     <p>Des solutions web pour tout les métiers </p>
   </header>
@@ -46,15 +44,16 @@
   <nav aria-label="Navigation principale">
     <ul>
       <li><a href="#services">Nos services </a></li>
-      <li><a href="#création">Nos créations </a></li>
+      <li><a href="#creation">Nos créations </a></li>
       <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#avis">Avis clients</a></li>
       <li><a href="#tarifs-contact">Tarifs & Contacts</a></li>
     </ul>
   </nav>
   <div class="nav-bar"></div>
   <main>
     <!--section présentation-->
-    <section class="presentation">
+    <section id="presentation" class="presentation">
       <div class="presentation__text">
         <h2>Bienvenue chez Code&Craft</h2>
         <p>
@@ -75,7 +74,7 @@
     </section>
 
     <!-- section services  -->
-    <section class="services">
+    <section id="services" class="services">
       <div class="container">
 
         <div class="container__text">
@@ -114,7 +113,7 @@
       </div>
     </section>
     <!-- section créations-->
-    <section class="creation">
+    <section id="creation" class="creation">
       <h2>Nos créations</h2>
       <div class="carousel">
         <div class="carousel-item">
@@ -141,7 +140,7 @@
       <button class="carousel-arrow carousel-arrow--prev">&#10094;</button>
       <button class="carousel-arrow carousel-arrow--next">&#10095;</button>
     </section>
-    <section class="workflow">
+    <section id="workflow" class="workflow">
       <h2>Notre workflow</h2>
       <div class="timeline">
         <div class="step">
@@ -166,8 +165,12 @@
         </div>
       </div>
     </section>
+    
+    <!-- section avis clients-->
+    @include('sectionAvis.avis')
+
     <!-- section tarifs et contacts-->
-    <section class="pricing-contact">
+    <section id="tarifs-contact" class="pricing-contact">
       <h2>Tarifs & contact</h2>
       <div class="pricing">
         <div class="card">
@@ -184,12 +187,17 @@
       <!-- formulaire de contact -->
       <div class="contact-form">
         <h2>Contactez-nous</h2>
-        <form>
-          <input type="text" placeholder="Nom" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Votre message"></textarea>
+      <form action="/contact" method="POST">
+          @csrf
+
+          <input type="text" name="name" placeholder="Nom" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Votre message" required></textarea>
+          
+
           <button type="submit">Envoyer</button>
-        </form>
+      </form>
+
         <div class="contact-card">
           <h3>Code&Craft SAS</h3>
           <address>
@@ -240,8 +248,17 @@
     </div>
   </footer>
   
+<button id="backToTop" aria-label="Remonter en haut">
+  ↑
+</button>
 
 @vite(['resources/sass/main.scss', 'resources/js/main.js'])
 </body>
+@if(session('success'))
+    <div style="padding: 10px; background: #d4edda; color: #155724; margin-bottom: 20px;">
+        {{ session('success') }}
+    </div>
+@endif
+
 
 </html>

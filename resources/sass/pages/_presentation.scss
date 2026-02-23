@@ -3,81 +3,82 @@
 @use "../base/typography";
 @use "../base/base";
 @use "../abstracts/placeholders" as *;
+@use "sass:color";
 
 /* ===========================
    PRESENTATION
    =========================== */
 .presentation {
-  @extend %card-style;
-  gap: $spacing-medium;
-  padding: $spacing-large;
-  margin: $spacing-large 0;
-  text-align: center; // mobile : tout centré
+    @extend %card-style;
+    gap: $spacing-md;
+    padding: $spacing-xl;
+    margin: $spacing-xl 0;
+    text-align: center; // mobile : tout centré
 
-  @include respond-desktop {
-    display: flex; // passe en deux colonnes
-    align-items: center;
-    justify-content: space-between;
+    @include respond-desktop {
+        display: flex; // passe en deux colonnes
+        align-items: center;
+        justify-content: space-between;
 
-    .presentation__text {
-      flex: 1;
-      padding-right: $spacing-large;
-      text-align: center; // reste centré en desktop
+        .presentation__text {
+            flex: 1;
+            padding-right: $spacing-xl;
+            text-align: center; // reste centré en desktop
 
-      h2,
-      p {
-        text-align: center; // force le centrage
-      }
+            h2,
+            p {
+                text-align: center; // force le centrage
+            }
+        }
+
+        .presentation__image {
+            flex: 1;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
     }
-
-    .presentation__image {
-      flex: 1;
-
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-    }
-  }
 }
 
 /* ===========================
    VALEURS
    =========================== */
 .values {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: $spacing-medium;
-  list-style: none;
-  margin: $spacing-medium 0;
-  padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
+    list-style: none;
+    margin: $spacing-md 0;
+    padding: 0;
 
-  li {
-    flex: 1 1 100%;
-    text-align: center;
-    font-weight: bold;
-    color: $color-highlight;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-  }
-
-  @include respond-desktop {
     li {
-      flex: 0 0 auto;
+        flex: 1 1 100%;
+        text-align: center;
+        font-weight: bold;
+        color: $color-highlight;
+        text-transform: uppercase;
+        font-size: 1.1rem;
     }
-  }
+
+    @include respond-desktop {
+        li {
+            flex: 0 0 auto;
+        }
+    }
 }
 
 /* ===========================
    SIGNATURE
    =========================== */
 .signature {
-  text-align: center;
-  margin-top: $spacing-medium;
-  font-style: italic;
-  color: $color-primary;
-  font-weight: 600;
+    text-align: center;
+    margin-top: $spacing-md;
+    font-style: italic;
+    color: $color-primary;
+    font-weight: 600;
 }

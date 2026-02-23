@@ -1,149 +1,150 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "sass:color";
 
 /* ===========================
    HEADER
    =========================== */
 header {
-  position: sticky; // reste fixé
-  top: 0; // collé en haut
-  z-index: 1000; // au-dessus du contenu
-  background: $color-background;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid $color-highlight;
+    position: sticky; // reste fixé
+    top: 0; // collé en haut
+    z-index: 1000; // au-dessus du contenu
+    background: $color-background;
+    padding: $spacing-md;
+    text-align: center;
+    border-bottom: 2px solid $color-highlight;
 
-  .logo {
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 120px;
-    height: auto;
+    .logo {
+        display: block;
+        margin: 0 auto $spacing-xs;
+        max-width: 7.5rem;
+        height: auto;
 
-    @include respond-tablet {
-      max-width: 100px;
+        @include respond-tablet {
+            max-width: 6.25rem;
+        }
+
+        @include respond-desktop {
+            max-width: 7.5rem;
+            margin: 0; // plus besoin de centrer
+        }
     }
 
+    h1 {
+        font-family: $font-title;
+        color: $color-primary;
+        font-size: 1.6rem;
+        margin: 0;
+
+        @include respond-tablet {
+            font-size: 1.8rem;
+        }
+
+        @include respond-desktop {
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+
+    h2 {
+        font-family: $font-subtitle;
+        color: $color-secondary;
+        font-size: 1rem;
+        margin-top: $spacing-xxs;
+
+        @include respond-desktop {
+            text-align: left;
+        }
+    }
+
+    p {
+        font-size: 0.9rem;
+
+        @include respond-tablet {
+            font-size: 1.1rem;
+        }
+
+        @include respond-desktop {
+            text-align: left;
+        }
+    }
+
+    /* Layout desktop : logo à gauche, textes à droite */
     @include respond-desktop {
-      max-width: 120px;
-      margin: 0; // plus besoin de centrer
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
     }
-  }
-
-  h1 {
-    font-family: $font-title;
-    color: $color-primary;
-    font-size: 1.6rem;
-    margin: 0;
-
-    @include respond-tablet {
-      font-size: 1.8rem;
-    }
-
-    @include respond-desktop {
-      font-size: 2rem;
-      text-align: left;
-    }
-  }
-
-  h2 {
-    font-family: $font-subtitle;
-    color: $color-secondary;
-    font-size: 1rem;
-    margin-top: 5px;
-
-    @include respond-desktop {
-      text-align: left;
-    }
-  }
-
-  p {
-    font-size: 0.9rem;
-
-    @include respond-tablet {
-      font-size: 1.1rem;
-    }
-
-    @include respond-desktop {
-      text-align: left;
-    }
-  }
-
-  /* Layout desktop : logo à gauche, textes à droite */
-  @include respond-desktop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-  }
 }
 
 /* ===========================
    NAVIGATION
    =========================== */
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block; // mobile : vertical
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block; // mobile : vertical
 
-  @include respond-tablet {
-    display: flex; // horizontal
-    justify-content: center;
-    gap: 30px;
-  }
+    @include respond-tablet {
+        display: flex; // horizontal
+        justify-content: center;
+        gap: $spacing-lg;
+    }
 }
 
 nav li {
-  margin: 8px 0;
+    margin: $spacing-xs 0;
 
-  @include respond-tablet {
-    margin: 0; // plus besoin sur desktop
-  }
+    @include respond-tablet {
+        margin: 0; // plus besoin sur desktop
+    }
 }
 
 nav a {
-  position: relative;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+    position: relative;
+    color: $color-text;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 
-  // Barre de soulignement (cachée par défaut)
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: $color-highlight;
-    transition: width 0.3s ease;
-  }
-
-  // Effet au survol
-  &:hover {
-    color: $color-highlight;
-
+    // Barre de soulignement (cachée par défaut)
     &::after {
-      width: 100%;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -$spacing-xxs;
+        width: 0;
+        height: 2px;
+        background: $color-highlight;
+        transition: width 0.3s ease;
     }
-  }
 
-  // État actif (page courante)
-  &.active {
-    color: $color-highlight;
+    // Effet au survol
+    &:hover {
+        color: $color-highlight;
 
-    &::after {
-      width: 100%;
+        &::after {
+            width: 100%;
+        }
     }
-  }
+
+    // État actif (page courante)
+    &.active {
+        color: $color-highlight;
+
+        &::after {
+            width: 100%;
+        }
+    }
 }
 
 /* ===========================
    BARRE VIOLETTE
    =========================== */
 .nav-bar {
-  height: 2px;
-  background-color: $color-primary;
-  width: 100%;
+    height: 2px;
+    background-color: $color-primary;
+    width: 100%;
 }
